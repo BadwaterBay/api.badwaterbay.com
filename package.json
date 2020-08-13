@@ -17,7 +17,9 @@
     "serve": "node ./dist/bin/www",
     "development": "nodemon --config ./nodemon.json",
     "start": "run-s ci development",
-    "production": "NODE_ENV=production run-s ci build serve",
+    "run:dev": "pm2 start ./config/pm2/pm2-dev.config.js",
+    "run:prod": "pm2 start ./config/pm2/pm2-prod.config.js",
+    "production": "NODE_ENV=production run-s ci build run:prod",
     "refresh": "rm -rf ./node_modules/ && yarn ci"
   },
   "husky": {
@@ -45,7 +47,6 @@
     "morgan": "^1.10.0",
     "pug": "^3.0.0",
     "serve-favicon": "^2.5.0",
-    "uglify-js": "^3.10.1",
     "uuid": "^8.3.0"
   },
   "devDependencies": {

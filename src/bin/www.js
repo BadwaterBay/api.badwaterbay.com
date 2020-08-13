@@ -6,6 +6,7 @@ import debugLib from 'debug';
 import app from '../app';
 
 dotenv.config();
+
 const debug = debugLib('api.badwaterbay.com:server');
 
 /**

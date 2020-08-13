@@ -1,6 +1,6 @@
+import path from 'path';
 import express from 'express';
 import createError from 'http-errors';
-import path from 'path';
 import cors from 'cors';
 import logger from 'morgan';
 import cookieParser from 'cookie-parser';
