@@ -19,20 +19,19 @@ const redirectUriForAuth =
     ? 'https://api.badwaterbay.com/labelcopier/oauth-callback'
     : 'http://localhost:5036/labelcopier/oauth-callback';
 
+const requestedScopes = 'repo';
+
 const redirectUriWithToken =
   process.env.NODE_ENV === 'production'
     ? 'https://badwaterbay.com/labelcopier'
     : 'http://localhost:5000/labelcopier';
 
-const urlForLoginGithub = () => {
-  const url =
-    'https://github.com/login/oauth/authorize' +
-    `?client_id=${clientId}` +
-    '&scope=repo%20public_repo' +
-    `&redirect_uri=${redirectUriForAuth}` +
-    `&state=${randomStringAuth}`;
-  return url;
-};
+const urlForLoginGithub = () =>
+  'https://github.com/login/oauth/authorize' +
+  `?client_id=${clientId}` +
+  `&scope=${requestedScopes}` +
+  `&redirect_uri=${redirectUriForAuth}` +
+  `&state=${randomStringAuth}`;
 
 router.get('/oauth', (req, res, next) => {
   res.redirect(urlForLoginGithub());
