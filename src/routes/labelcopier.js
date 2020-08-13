@@ -28,13 +28,13 @@ const urlForLoginGithub = () => {
   const url =
     'https://github.com/login/oauth/authorize' +
     `?client_id=${clientId}` +
+    '&scope=repo%20public_repo' +
     `&redirect_uri=${redirectUriForAuth}` +
     `&state=${randomStringAuth}`;
   return url;
 };
 
 router.get('/oauth', (req, res, next) => {
-  console.log('Get reqeust: labelcopier/oauth');
   res.redirect(urlForLoginGithub());
 });
 
