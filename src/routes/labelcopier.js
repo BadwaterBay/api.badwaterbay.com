@@ -19,7 +19,7 @@ const redirectUriForAuth =
     ? 'https://api.badwaterbay.com/labelcopier/oauth-callback'
     : 'http://localhost:5036/labelcopier/oauth-callback';
 
-const requestedScopes = 'repo';
+const requestedScopes = 'repo%20public_repo';
 
 const redirectUriWithToken =
   process.env.NODE_ENV === 'production'
