@@ -15,14 +15,14 @@ const clientSecret = process.env.GITHUB_OAUTH_CLIENT_SECRET;
 const randomStringAuth = uuidv4();
 
 const redirectUriForAuth =
-  process.env.NODE_ENV === 'development'
-    ? 'http://localhost:5036/labelcopier/oauth-callback'
-    : 'https://api.badwaterbay.com/labelcopier/oauth-callback';
+  process.env.NODE_ENV === 'production'
+    ? 'https://api.badwaterbay.com/labelcopier/oauth-callback'
+    : 'http://localhost:5036/labelcopier/oauth-callback';
 
 const redirectUriWithToken =
-  process.env.NODE_ENV === 'development'
-    ? 'http://localhost:5000/labelcopier'
-    : 'https://badwaterbay.com/labelcopier';
+  process.env.NODE_ENV === 'production'
+    ? 'https://badwaterbay.com/labelcopier'
+    : 'http://localhost:5000/labelcopier';
 
 const urlForLoginGithub = () => {
   const url =
@@ -43,11 +43,11 @@ const urlForExchangeForGithubAccessToken = () => {
 };
 
 router.get('/oauth-callback', (req, res, next) => {
-  if (req.query.state !== randomStringAuth) {
-    throw new Error(
-      'Returned state does not match the state sent. The connection may be compromised. Aborting.'
-    );
-  }
+  // if (req.query.state !== randomStringAuth) {
+  //   throw new Error(
+  //     'Returned state does not match the state sent. The connection may be compromised. Aborting.'
+  //   );
+  // }
 
   const bodyForExchange = {
     client_id: clientId,
