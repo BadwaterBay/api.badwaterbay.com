@@ -6,7 +6,7 @@ import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import indexRouter from './routes/index';
-import labelcopierRouter from './routes/labelcopier';
+import appsRouter from './routes/apps/index';
 
 // Create Express server
 const app = express();
@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(bodyParser.json()); // use body-parser middleware to parse incoming json
 
 app.use('/', indexRouter);
-app.use('/labelcopier', labelcopierRouter);
+app.use('/apps', appsRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
@@ -35,7 +35,7 @@ app.use((req, res, next) => {
 app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  res.locals.error = req.app.get('env') === 'production' ? {} : err;
 
   // render the error page
   res.status(err.status || 500);
