@@ -3,6 +3,7 @@
  */
 
 import express from 'express';
+import appsRouter from './apps';
 
 const router = express.Router();
 
@@ -14,5 +15,7 @@ router.get('/', (req, res, next) => {
     data: 'You are at api.badwaterbay.com',
   });
 });
+
+router.use('/apps', appsRouter);
 
 export default router;

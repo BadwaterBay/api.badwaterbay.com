@@ -75,5 +75,7 @@ server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
-process.env.NODE_ENV === 'development'; // eslint-disable-line no-unused-expressions
-console.log(`The server is hosted at http://localhost:${port}`);
+if (process.env.NODE_ENV === 'development') {
+  console.log(`NODE_ENV is: ${process.env.NODE_ENV}`);
+  console.log(`The server is hosted at http://localhost:${port}`);
+}
