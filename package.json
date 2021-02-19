@@ -54,7 +54,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.10",
+    "@babel/cli": "^7.12.17",
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "chai": "^4.2.0",
