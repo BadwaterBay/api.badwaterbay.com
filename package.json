@@ -1,6 +1,6 @@
 {
   "name": "api.badwaterbay.com",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Backend API for BadwaterBay.com",
   "main": "index.js",
   "repository": "https://github.com/BadwaterBay/api.badwaterbay.com.git",
@@ -22,13 +22,8 @@
     "production": "NODE_ENV=production yarn build",
     "refresh": "rm -rf ./node_modules/ && yarn ci"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
-    "./**/*.{js,jsx,ts,tsx,html,json,md,css,scss}": [
+    "./**/*.{js,jsx,html,json,md,css,scss}": [
       "prettier --write"
     ],
     "./**/*.{js,jsx,ts,tsx}": [
@@ -54,18 +49,18 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
-    "chai": "^4.2.0",
-    "eslint": "^7.17.0",
+    "@babel/cli": "^7.12.17",
+    "@babel/core": "^7.12.17",
+    "@babel/preset-env": "^7.12.17",
+    "chai": "^4.3.0",
+    "eslint": "^7.20.0",
     "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-config-prettier": "^7.1.0",
+    "eslint-config-prettier": "^8.0.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
-    "husky": "^4.3.0",
-    "lint-staged": "^10.5.3",
-    "mocha": "^8.2.1",
+    "husky": "^5.1.0",
+    "lint-staged": "^10.5.4",
+    "mocha": "^8.3.0",
     "nodemon": "^2.0.7",
     "prettier": "^2.1.2"
   }
