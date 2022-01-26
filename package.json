@@ -52,7 +52,7 @@
     "@babel/cli": "^7.12.17",
     "@babel/core": "^7.12.17",
     "@babel/preset-env": "^7.12.17",
-    "chai": "^4.3.0",
+    "chai": "^4.3.5",
     "eslint": "^7.20.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^8.0.0",
